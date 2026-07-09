@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/stripe-server/node_modules
 /.pnp
 .pnp.js
 
@@ -11,13 +12,16 @@
 # production
 /build
 
-# misc
-.DS_Store
+# environment variables
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+/stripe-server/.env
 
+# misc
+.DS_Store
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
