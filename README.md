@@ -1,23 +1,23 @@
 # 🦊 GamerFox – Online Shop
 
-Ein React-basierter Online-Shop für Videospiele, gestaltet als kinderfreundlicher Gaming-Store der "Gebrüder Fuchs". Mit Nutzer-Login, Warenkorb und echter Stripe-Zahlungsanbindung.
+A React-based online shop for video games, designed as a kid-friendly gaming store run by the "Fox Brothers". Features user login, a shopping cart, and real Stripe payment integration.
 
-## Live-Demo
+## Live Demo
 
-🔗 [Hier ansehen](https://fox-online-shop.netlify.app/)
+🔗 [View live](https://fox-online-shop.netlify.app/)
 
 ![GamerFox Screenshot](image.png)
 
 ## Features
 
-- 🎮 Produktkatalog mit Kategorie-Filter (PlayStation, X-Box, Nintendo)
-- 🔐 Nutzer-Login via Auth0 (E-Mail/Passwort oder Google)
-- 🛒 Warenkorb mit Mengenanpassung
-- 💳 Echte Zahlungsabwicklung über Stripe (Test-Modus)
-- 🔒 Serverseitige Preisvalidierung gegen Manipulation
-- 📱 Responsives Design für Smartphones, Tablets und Desktop
+- 🎮 Product catalog with category filter (PlayStation, X-Box, Nintendo)
+- 🔐 User login via Auth0 (email/password or Google)
+- 🛒 Shopping cart with quantity adjustment
+- 💳 Real payment processing via Stripe (test mode)
+- 🔒 Server-side price validation against tampering
+- 📱 Responsive design for smartphones, tablets, and desktop
 
-## Verwendete Technologien
+## Tech Stack
 
 **Frontend:**
 - React 18
@@ -29,35 +29,35 @@ Ein React-basierter Online-Shop für Videospiele, gestaltet als kinderfreundlich
 
 **Backend:**
 - Node.js / Express
-- Stripe API (serverseitige Zahlungsabwicklung & Preisvalidierung)
+- Stripe API (server-side payment processing & price validation)
 
-## Projektstruktur
+## Project Structure
 ```
-├── public/                  # Statische Assets (Bilder, Icons)
+├── public/                     # Static assets (images, icons)
 ├── src/
-│   ├── assets/               # Hintergrundvideo
+│   ├── assets/                 # Background video
 │   ├── Components/
-│   │   ├── Cart/              # Warenkorb-Komponenten
-│   │   ├── Filter/             # Kategorie-Filter
-│   │   └── GameComponents/      # Produktkarten
-│   ├── data/                 # Produktdaten
-│   ├── pics/                 # UI-Icons
-│   ├── redux/                # State Management (Cart, Filter)
-│   ├── Stripe/                # Checkout-Formular
+│   │   ├── Cart/               # Shopping cart components
+│   │   ├── Filter/             # Category filter
+│   │   └── GameComponents/     # Product cards
+│   ├── data/                   # Product data
+│   ├── pics/                   # UI icons
+│   ├── redux/                  # State management (cart, filter)
+│   ├── Stripe/                 # Checkout form
 │   ├── App.js
 │   ├── Shop.js
 │   ├── Login.js
 │   └── Logout.js
-└── stripe-server/            # Node/Express-Server für Zahlungsabwicklung
-├── data/                   # Serverseitige Produktdaten (Preisvalidierung)
+└── stripe-server/              # Node/Express server for payment processing
+├── data/                       # Server-side product data (price validation)
 └── index.js
 ```
 
-## Hinweis
+## Note
 
-Dieses Projekt läuft aktuell im Stripe-Testmodus. Das Backend (`stripe-server`) ist für den lokalen Betrieb ausgelegt; für den produktiven Einsatz müsste es zusätzlich gehostet werden.
+This project currently runs in Stripe test mode. The backend (`stripe-server`) is set up to run locally; for production use it would need to be hosted separately.
 
-Alle Bilder / KI-Bilder wurden aus offenen Informationsquellen (pinterest.com, freepik.com) zitiert und werden hier ausschließlich zu Informationszwecken präsentiert.
+All images / AI-generated images were sourced from open resources (pinterest.com, freepik.com) and are presented here for informational purposes only.
 
 ## Contact
 
