@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 🦊 GamerFox – Online Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ein React-basierter Online-Shop für Videospiele, gestaltet als kinderfreundlicher Gaming-Store der "Gebrüder Fuchs". Mit Nutzer-Login, Warenkorb und echter Stripe-Zahlungsanbindung.
 
-## Available Scripts
+## Live-Demo
 
-In the project directory, you can run:
+🔗 [Hier ansehen](https://fox-online-shop.netlify.app/)
 
-### `npm start`
+![GamerFox Screenshot](DEIN-DATEINAME.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 🎮 Produktkatalog mit Kategorie-Filter (PlayStation, X-Box, Nintendo)
+- 🔐 Nutzer-Login via Auth0 (E-Mail/Passwort oder Google)
+- 🛒 Warenkorb mit Mengenanpassung
+- 💳 Echte Zahlungsabwicklung über Stripe (Test-Modus)
+- 🔒 Serverseitige Preisvalidierung gegen Manipulation
+- 📱 Responsives Design für Smartphones, Tablets und Desktop
 
-### `npm test`
+## Verwendete Technologien
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend:**
+- React 18
+- Redux Toolkit
+- React Router
+- React Bootstrap
+- Auth0 (React SDK)
+- Stripe (React SDK)
 
-### `npm run build`
+**Backend:**
+- Node.js / Express
+- Stripe API (serverseitige Zahlungsabwicklung & Preisvalidierung)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Projektstruktur
+```
+├── public/                  # Statische Assets (Bilder, Icons)
+├── src/
+│   ├── assets/               # Hintergrundvideo
+│   ├── Components/
+│   │   ├── Cart/              # Warenkorb-Komponenten
+│   │   ├── Filter/             # Kategorie-Filter
+│   │   └── GameComponents/      # Produktkarten
+│   ├── data/                 # Produktdaten
+│   ├── pics/                 # UI-Icons
+│   ├── redux/                # State Management (Cart, Filter)
+│   ├── Stripe/                # Checkout-Formular
+│   ├── App.js
+│   ├── Shop.js
+│   ├── Login.js
+│   └── Logout.js
+└── stripe-server/            # Node/Express-Server für Zahlungsabwicklung
+├── data/                   # Serverseitige Produktdaten (Preisvalidierung)
+└── index.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Hinweis
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dieses Projekt läuft aktuell im Stripe-Testmodus. Das Backend (`stripe-server`) ist für den lokalen Betrieb ausgelegt; für den produktiven Einsatz müsste es zusätzlich gehostet werden.
 
-### `npm run eject`
+Alle Bilder / KI-Bilder wurden aus offenen Informationsquellen (pinterest.com, freepik.com) zitiert und werden hier ausschließlich zu Informationszwecken präsentiert.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to reach out via GitHub or Instagram:
+- GitHub: [@VampireNoob](https://github.com/VampireNoob)
+- Instagram: [@vampirenoob](https://www.instagram.com/vampirenoob/)
