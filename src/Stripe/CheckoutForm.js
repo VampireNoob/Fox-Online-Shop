@@ -2,46 +2,49 @@ import '../App.css';
 import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { getTotalPrice } from "../redux/cartSlice";
+import { getCartItems } from "../redux/cartSlice";
 import { useSelector } from "react-redux";
 
 export const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
-    const totalPrice = useSelector(getTotalPrice);
-    const amount = totalPrice * 100;
-    const [messageSuccess, setMessageSucces] = useState(false);
+    const cartItems = useSelector(getCartItems);
+    const [messageSuccess, setMessageSuccess] = useState(false);
+    const [isProcessing, setIsProcessing] = useState(false);
 
     const handleSubmit = async (event) => {
-    event.preventDefault();
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-        type: "card",
-        card: elements.getElement(CardElement),
-    });
+        event.preventDefault();
+        if (cartItems.length === 0 || isProcessing) return;
+        setIsProcessing(true);
+
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: "card",
+            card: elements.getElement(CardElement),
+        });
 
         if (!error) {
-            console.log("Stripe 23 | token generated!", paymentMethod);
             try {
                 const { id } = paymentMethod;
+                const items = cartItems.map(item => ({
+                    gameId: item.gameId,
+                    quantity: item.quantity
+                }));
+
                 const response = await axios.post(
                     "http://localhost:8080/stripe/charge",
-                    {
-                    amount: amount,
-                    id: id,
-                    }
+                    { items, id }
                 );
 
-                console.log("Stripe 35 | data", response.data.success);
                 if (response.data.success) {
-                    console.log("CheckoutForm.js 25 | payment successful!");
-                    setMessageSucces(true)
+                    setMessageSuccess(true);
                 }
-                } catch (error) {
-                    console.log("CheckoutForm.js 28 | ", error);
-                }
+            } catch (error) {
+                console.log("Zahlung fehlgeschlagen:", error.message);
+            }
         } else {
             console.log(error.message);
         }
+        setIsProcessing(false);
     };
 
     return (
@@ -49,11 +52,13 @@ export const CheckoutForm = () => {
             {!messageSuccess ?
             <form onSubmit={handleSubmit} style={{ maxWidth: 500, color: 'white' }}>
                 <CardElement />
-                <button className="checkOut">Bezahlen</button>
+                <button className="checkOut" disabled={isProcessing || cartItems.length === 0}>
+                    {isProcessing ? 'Wird verarbeitet...' : 'Bezahlen'}
+                </button>
             </form>
-:
+            :
             <div>
-                <h2>Die Bezahlung ist Erfolgt!</h2>
+                <h2>Die Bezahlung ist erfolgt!</h2>
             </div>
             }
         </div>

@@ -8,13 +8,20 @@ export const cartSlice = createSlice({
 
     reducers: {
         addItemToCart: (state, action) => {
-            const timeId = new Date().getTime()
-            state.cartItems.push({
-                id: timeId,
-                gameId: action.payload.game.id,
-                quantity: action.payload.quantity,
-                totalPrice: action.payload.quantity * action.payload.game.price
-            })
+            const existingItem = state.cartItems.find(
+                item => item.gameId === action.payload.game.id
+            );
+            if (existingItem) {
+                existingItem.quantity += action.payload.quantity;
+                existingItem.totalPrice = existingItem.quantity * action.payload.game.price;
+            } else {
+                state.cartItems.push({
+                    id: new Date().getTime(),
+                    gameId: action.payload.game.id,
+                    quantity: action.payload.quantity,
+                    totalPrice: action.payload.quantity * action.payload.game.price
+                });
+            }
         },
         removeItemFromCart: (state, action) => {
             state.cartItems = state.cartItems.filter(
@@ -31,7 +38,7 @@ export const getTotalPrice = state => {
 }
 export const getTotalArticles = state => {
     return state.cart.cartItems.length 
-}; // evtl wieder entfernen ab 32
+};
 export const getCartItems = state => state.cart.cartItems;
 export const { addItemToCart, removeItemFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

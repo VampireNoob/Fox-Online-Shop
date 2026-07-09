@@ -8,11 +8,11 @@ const CartItem = ({ cartItem }) => {
     const dispatch = useDispatch();
     return(
         <div className="cartBg">
-            <img src={`../${games.image}.jpg`} alt="item" width='200px' />
+            <img src={`/${games.image}.jpg`} alt="item" width='200px' />
             <br /><br />
             <p>{ games.name }</p>
             <p>Menge: { cartItem.quantity }</p>
-            <p> Summe: { games.price.toFixed(2) * cartItem.quantity } €</p>
+            <p>Summe: {(games.price * cartItem.quantity).toFixed(2)} €</p>
             <span onClick={() => dispatch(removeItemFromCart({cartItemId: cartItem.id}))}>
                 <img src={ trash } alt="delete" width='17px' />
             </span>

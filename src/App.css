@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -113,7 +114,7 @@ video {
   border-radius: 10px;
   border: none;
   padding: 3px;
-  background: rgb(19,110,163, 0.9);
+  background: rgba(19,110,163, 0.9);
 }
 
 /* Warenkorb */
@@ -184,7 +185,6 @@ video {
   font-size: 25px;
   margin-top: 10px;
 }
-
 .content {
   position: absolute;
   width: 100%;
@@ -204,7 +204,7 @@ video {
 
 /* Begrüßung */
 .contain{
-  background: rgb(19,110,163, 0.9);
+  background: rgba(19,110,163, 0.9);
   font-family: 'Seymour One', sans-serif;
 }
 
@@ -215,7 +215,7 @@ video {
 
 /* Kategorien */
 .grey {
-  background: rgb(19,110,163, 0.9);
+  background: rgba(19,110,163, 0.9);
   border: none;
   border-radius: 10px;
   display: flex;
@@ -229,6 +229,7 @@ video {
   text-align: center;
   letter-spacing: 0.5rem;
   width: 550px;
+  max-width: 90vw;
   cursor: pointer;
   margin: 5px;
   padding: 5px;
@@ -283,7 +284,7 @@ video {
 
 /* Bewertungen */
 .cont {
-  background: rgb(19,110,163, 0.9);
+  background: rgba(19,110,163, 0.9);
   border-radius: 10px;
 }
 
@@ -389,8 +390,9 @@ video {
   }
 
   .mobileCard {
-    margin-left: -80px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 0;
   }
 
   .mobileSlideHeader {
@@ -427,11 +429,6 @@ video {
 }
 
 @media all and (max-width: 480px) {
-  .mobileCard {
-    margin-left: -95px;
-    width: 400px;
-  }
-
   .mobileSlideHeader {
     font-size: 15px;
   }

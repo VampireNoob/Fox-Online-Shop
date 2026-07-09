@@ -14,14 +14,17 @@ const Game = ({ game }) => {
             {[0].map(item => (
             <Col className='col-md-6 my-4' xs='6' key={game.id}>
                 <Card className='border-0 mobileCard'>
-                    <Card.Img variant="top" src={`./${game.image}.jpg`} height='300' />
+                    <Card.Img variant="top" src={`/${game.image}.jpg`} height='300' />
                     <Card.Body className='card-body'>
                         <Card.Title className='cart'>{ game.name }</Card.Title>
                     <Card.Text className='cart'>{ game.description }</Card.Text>
                     <ChangeQuantity quantity={quantity} setQuantity={setQuantity} />
                     <Card.Text className='cart-price'>{ game.price } €</Card.Text>
                         <Button className='text-dark btnCart border-0'
-                        onClick={() => {dispatch(addItemToCart({game, quantity}))}}>In den Warenkorb</Button>
+                            onClick={() => {
+                                dispatch(addItemToCart({game, quantity}));
+                                setQuantity(1);
+                        }}>In den Warenkorb</Button>
                     </Card.Body>
                 </Card>
             </Col>

@@ -5,7 +5,7 @@ import video from './assets/pixel.mp4'
 const App = () => {
     return (
         <div className='App'>
-            <video src={ video } autoPlay loop muted />
+            <video src={ video } autoPlay loop muted playsInline aria-hidden="true" />
             <div className='content'>
                 <Shop />
             </div>

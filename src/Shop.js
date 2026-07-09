@@ -18,8 +18,8 @@ import cart from './pics/cart.png';
 import { useAuth0 } from "@auth0/auth0-react";
 import Cart from './Components/Cart/Cart';
 import AllCategories from './Components/Filter/AllCategories';
-import { useSelector } from 'react-redux'; // evtl entfernen 
-import { getTotalArticles } from './redux/cartSlice'; // evtl entfernen
+import { useSelector } from 'react-redux';
+import { getTotalArticles } from './redux/cartSlice';
 
 function Shop () {
     const { isLoading } = useAuth0();
@@ -27,7 +27,7 @@ function Shop () {
     const openCart = () => {
         setCartContainer(!cartContainer)
     } // wichtig für den warenkorb
-    const totalItems = useSelector(getTotalArticles); // evtl entfernen 
+    const totalItems = useSelector(getTotalArticles);
     if (isLoading) return <span className='lds-heart'><div></div></span>
     return(
     <div className='bg'>
@@ -55,7 +55,6 @@ function Shop () {
                                 <button className='btn-close-cart' onClick={() => openCart()}>X</button>
                                     <hr className='horz' />
                                     <h3 className="box-close-title"><Cart /></h3>
-                                    {/* <hr className='horz'/> */}
                                 </div>
                             </div>
                         </div>
@@ -65,7 +64,7 @@ function Shop () {
             </header>
 
     <Alert className='danger border-0 text-dark mobileDanger'>
-        Nur Heute 30% Rabbat auf alles!
+        Nur Heute 30% Rabatt auf alles!
     </Alert>
 
     <div className="contain marketing rounded">
@@ -73,10 +72,14 @@ function Shop () {
             <div className="col-md-7 text-center">
                 <h2 className="info featurette-heading fw-normal lh-1">Hallo kleine Füchse!</h2>
                 <h3><span className="text-dark">Wir sind die gebrüder Fuchs und begrüßen euch in unsrem Gaming-Online-Shop für Kinder.</span></h3>
-                <p className="lead text-muted">Wir sind schon seit dem Kindesalter dem Gaming-Fieber verfallen und sind bis heute der Thematik Treu geblieben.
-                Bei uns findet Ihr die pasenden Games und die dazugehörigen Informationen.{'\n'}{'\n'}
-                <h3 className="info">Gute Nachrichten:</h3>{'\n'}
-                Es gibt jede Woche tolle Actionen und Angebote auf unsere Produkte mit einem kleinem Fuchs-Aufkleber, also haltet die Augen auf.</p>
+                <p className="lead text-muted">
+                    Wir sind schon seit dem Kindesalter dem Gaming-Fieber verfallen und sind bis heute der Thematik Treu geblieben.
+                    Bei uns findet Ihr die pasenden Games und die dazugehörigen Informationen.
+                </p>
+                <h3 className="info">Gute Nachrichten:</h3>
+                <p className="lead text-muted">
+                    Es gibt jede Woche tolle Actionen und Angebote auf unsere Produkte mit einem kleinem Fuchs-Aufkleber, also haltet die Augen auf.
+                </p>
             </div>
             <div className="col-md-5">
                 <Image className="imgmobile" src={ fox } alt="GamerFox" width="500" height="500"/>
@@ -160,12 +163,12 @@ function Shop () {
                 </div>
 
                 <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li className="ms-3"><a className="text-muted" href="placeholder"><Image src={ insta } alt="instagram" width="24" height="24"/></a></li>
-                    <li className="ms-3"><a className="text-muted" href="placeholder"><Image src={ yutu } alt="youtube" width="24" height="24"/></a></li>
-                    <li className="ms-3"><a className="text-muted" href="placeholder"><Image src={ disc } alt="discord" width="24" height="24"/></a></li>
+                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ insta } alt="instagram" width="24" height="24"/></a></li>
+                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ yutu } alt="youtube" width="24" height="24"/></a></li>
+                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ disc } alt="discord" width="24" height="24"/></a></li>
                 </ul>
             </footer>
-            <div class="mb-3 mb-md-0 footerSize footerText text-center">Alle Bilder / KI Bilder wurden aus offenen Informationsquellen https://www.pinterest.com/ - https://www.freepik.com/backgrounds zitiert und hier ausschließlich zu Informationszwecken präsentiert!</div>
+            <div className="mb-3 mb-md-0 footerSize footerText text-center">Alle Bilder / KI Bilder wurden aus offenen Informationsquellen https://www.pinterest.com/ - https://www.freepik.com/backgrounds zitiert und hier ausschließlich zu Informationszwecken präsentiert!</div>
         </Container>
     </div>
     );
