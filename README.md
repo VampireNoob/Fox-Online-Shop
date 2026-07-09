@@ -6,7 +6,7 @@ Ein React-basierter Online-Shop für Videospiele, gestaltet als kinderfreundlich
 
 🔗 [Hier ansehen](https://fox-online-shop.netlify.app/)
 
-![alt text](image.png)
+![GamerFox Screenshot](image.png)
 
 ## Features
 
@@ -63,4 +63,8 @@ Alle Bilder / KI-Bilder wurden aus offenen Informationsquellen (pinterest.com, f
 
 Feel free to reach out via GitHub or Instagram:
 - GitHub: [@VampireNoob](https://github.com/VampireNoob)
+<<<<<<< HEAD
 - Instagram: [@vampirenoob](https://www.instagram.com/vampirenoob/)
+=======
+- Instagram: [@vampirenoob](https://www.instagram.com/vampirenoob/)
+>>>>>>> fb15ac298fc0d7be13406d021a35473812cd89b2
