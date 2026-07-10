@@ -13,6 +13,7 @@ A React-based online shop for video games, designed as a kid-friendly gaming sto
 - 🎮 Product catalog with category filter (PlayStation, X-Box, Nintendo)
 - 🔐 User login via Auth0 (email/password or Google)
 - 🛒 Shopping cart with quantity adjustment
+- 💰 Automatic 30% discount applied at checkout
 - 💳 Real payment processing via Stripe (test mode)
 - 🔒 Server-side price validation against tampering
 - 📱 Responsive design for smartphones, tablets, and desktop
@@ -55,7 +56,7 @@ A React-based online shop for video games, designed as a kid-friendly gaming sto
 
 ## Note
 
-This project currently runs in Stripe test mode. The backend (`stripe-server`) is set up to run locally; for production use it would need to be hosted separately.
+This project runs in Stripe test mode. The backend (`stripe-server`) is deployed on Render; the frontend is deployed on Netlify. To test a payment on the live demo, use Stripe's test card `4242 4242 4242 4242` with any future expiry date and any 3-digit CVC.
 
 All images / AI-generated images were sourced from open resources (pinterest.com, freepik.com) and are presented here for informational purposes only.
 
