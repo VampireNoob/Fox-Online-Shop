@@ -2,13 +2,14 @@ import '../App.css';
 import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { getCartItems } from "../redux/cartSlice";
-import { useSelector } from "react-redux";
+import { getCartItems, clearCart } from "../redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
     const cartItems = useSelector(getCartItems);
+    const dispatch = useDispatch();
     const [messageSuccess, setMessageSuccess] = useState(false);
     const [isProcessing, setIsProcessing] = useState(false);
 
@@ -37,6 +38,7 @@ export const CheckoutForm = () => {
 
                 if (response.data.success) {
                     setMessageSuccess(true);
+                    dispatch(clearCart());
                 }
             } catch (error) {
                 console.log("Zahlung fehlgeschlagen:", error.message);

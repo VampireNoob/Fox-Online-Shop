@@ -17,6 +17,7 @@ app.post("/stripe/charge", async (req, res) => {
         return res.status(400).json({ message: "Warenkorb ist leer", success: false });
     }
 
+    const DISCOUNT_RATE = 0.3;
     let amount = 0;
     for (const item of items) {
         const game = dataGames.find(g => g.id === item.gameId);
@@ -25,6 +26,7 @@ app.post("/stripe/charge", async (req, res) => {
         }
         amount += game.price * item.quantity;
     }
+    amount = amount * (1 - DISCOUNT_RATE);
     amount = Math.round(amount * 100);
 
     try {

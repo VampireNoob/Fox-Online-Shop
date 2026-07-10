@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export const DISCOUNT_RATE = 0.3;
+
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: {
@@ -27,6 +29,9 @@ export const cartSlice = createSlice({
             state.cartItems = state.cartItems.filter(
                 cartItem => cartItem.id !== action.payload.cartItemId
             )
+        },
+        clearCart: (state) => {
+            state.cartItems = [];
         }
     }
 })
@@ -36,9 +41,15 @@ export const getTotalPrice = state => {
         return cartItems.totalPrice + total
     }, 0)
 }
+export const getDiscountAmount = state => {
+    return getTotalPrice(state) * DISCOUNT_RATE;
+}
+export const getFinalPrice = state => {
+    return getTotalPrice(state) - getDiscountAmount(state);
+}
 export const getTotalArticles = state => {
-    return state.cart.cartItems.length 
+    return state.cart.cartItems.reduce((total, item) => total + item.quantity, 0)
 };
 export const getCartItems = state => state.cart.cartItems;
-export const { addItemToCart, removeItemFromCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
