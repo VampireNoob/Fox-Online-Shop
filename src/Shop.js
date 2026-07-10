@@ -163,9 +163,9 @@ function Shop () {
                 </div>
 
                 <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ insta } alt="instagram" width="24" height="24"/></a></li>
-                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ yutu } alt="youtube" width="24" height="24"/></a></li>
-                    <li className="ms-3"><a className="text-muted" href="#"><Image src={ disc } alt="discord" width="24" height="24"/></a></li>
+                    <li className="ms-3"><button type="button" className="text-muted socialIconBtn"><Image src={ insta } alt="instagram" width="24" height="24"/></button></li>
+                    <li className="ms-3"><button type="button" className="text-muted socialIconBtn"><Image src={ yutu } alt="youtube" width="24" height="24"/></button></li>
+                    <li className="ms-3"><button type="button" className="text-muted socialIconBtn"><Image src={ disc } alt="discord" width="24" height="24"/></button></li>
                 </ul>
             </footer>
             <div className="mb-3 mb-md-0 footerSize footerText text-center">Alle Bilder / KI Bilder wurden aus offenen Informationsquellen https://www.pinterest.com/ - https://www.freepik.com/backgrounds zitiert und hier ausschließlich zu Informationszwecken präsentiert!</div>

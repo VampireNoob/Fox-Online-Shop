@@ -308,6 +308,13 @@ video {
   font-size: 10px;
 }
 
+.socialIconBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: default;
+}
+
 /* Mobile */
 @media all and (max-width: 1399px) {
   .imgmobile {

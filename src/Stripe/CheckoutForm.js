@@ -31,7 +31,7 @@ export const CheckoutForm = () => {
                 }));
 
                 const response = await axios.post(
-                    "http://localhost:8080/stripe/charge",
+                    `${process.env.REACT_APP_API_URL}/stripe/charge`,
                     { items, id }
                 );
 
